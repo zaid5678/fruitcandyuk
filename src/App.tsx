@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, ScrollRestoration } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -14,7 +15,9 @@ import { CartProvider } from './context/CartContext';
 import './styles/global.css';
 
 function ScrollToTop() {
-  return <ScrollRestoration />;
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
 }
 
 export default function App() {
