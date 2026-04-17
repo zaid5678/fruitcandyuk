@@ -20,11 +20,6 @@ const featuredSlugs = ['freeze-dried-skittles', 'freeze-dried-starburst', 'freez
 const featuredProducts = products.filter(p => featuredSlugs.includes(p.slug));
 const homeReviews = reviews.slice(0, 3);
 
-const instaPosts = Array.from({ length: 6 }, (_, i) => ({
-  id: i,
-  src: `https://placehold.co/400x400/0E1624/F4A6C0?text=Post+${i + 1}`,
-  alt: `Fruit Candy UK Instagram post ${i + 1}`,
-}));
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -95,12 +90,12 @@ export default function Home() {
                 }}>
                   <img src="/logo.jpg" alt="Fruit Candy UK" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                {/* Surrounding product images */}
+                {/* Surrounding product circles */}
                 {[
-                  { top: '0%', left: '50%', transform: 'translateX(-50%)', src: 'https://placehold.co/90x90/1C2433/F4A6C0?text=🍬', label: 'Freeze-Dried Skittles' },
-                  { top: '50%', left: '0%', transform: 'translateY(-50%)', src: 'https://placehold.co/90x90/E87BA5/0E1624?text=⭐', label: 'Starburst' },
-                  { top: '50%', right: '0%', transform: 'translateY(-50%)', src: 'https://placehold.co/90x90/FAF6F1/0E1624?text=🍒', label: 'Sour Patch' },
-                  { bottom: '0%', left: '50%', transform: 'translateX(-50%)', src: 'https://placehold.co/90x90/E87BA5/FAF6F1?text=🎁', label: 'Bundle' },
+                  { top: '0%', left: '50%', transform: 'translateX(-50%)' },
+                  { top: '50%', left: '0%', transform: 'translateY(-50%)' },
+                  { top: '50%', right: '0%', transform: 'translateY(-50%)' },
+                  { bottom: '0%', left: '50%', transform: 'translateX(-50%)' },
                 ].map((pos, i) => (
                   <div key={i} style={{
                     position: 'absolute',
@@ -112,7 +107,7 @@ export default function Home() {
                     overflow: 'hidden',
                     background: 'var(--charcoal)',
                   }}>
-                    <img src={pos.src} alt={pos.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/logo.jpg" alt="Fruit Candy UK" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 ))}
               </div>
@@ -238,34 +233,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- INSTAGRAM / TIKTOK STRIP ---- */}
-      <section aria-labelledby="social-heading">
-        <div style={{ textAlign: 'center', padding: '2.5rem 0 1.25rem', background: 'var(--navy)' }}>
-          <h2 id="social-heading" style={{ color: 'var(--white)', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontFamily: 'var(--font-display)', letterSpacing: '0.03em' }}>
+      {/* ---- SOCIAL CTA ---- */}
+      <section className="bg-navy" style={{ padding: '3.5rem 0' }} aria-label="Follow us on social media">
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ color: 'var(--white)', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '0.75rem' }}>
             Follow @fruitcandy.uk
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', marginTop: '0.375rem' }}>
-            Tag us for a repost
+          <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1.75rem' }}>
+            Behind-the-scenes, new drops, and people losing their minds over crunchy sweets.
           </p>
-        </div>
-        <div className="insta-grid" role="list" aria-label="Social media posts">
-          {instaPosts.map(post => (
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
-              key={post.id}
               href="https://instagram.com/fruitcandy.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="insta-post"
-              role="listitem"
-              aria-label={`View post on Instagram: ${post.alt}`}
+              className="btn btn-outline-white"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
             >
-              <img src={post.src} alt={post.alt} loading="lazy" />
-              <div className="insta-post-overlay" aria-hidden="true">
-                {post.id % 2 === 0 ? <InstagramIcon size={22} /> : <TikTokIcon size={22} />}
-                <span style={{ fontSize: '0.8rem', fontWeight: 600 }}>View</span>
-              </div>
+              <InstagramIcon size={18} /> Instagram
             </a>
-          ))}
+            <a
+              href="https://tiktok.com/@fruitcandy.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-white"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+            >
+              <TikTokIcon size={18} /> TikTok
+            </a>
+          </div>
         </div>
       </section>
 

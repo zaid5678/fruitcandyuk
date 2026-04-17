@@ -20,26 +20,6 @@ export default function About() {
             It started because of a YouTube video. We watched someone freeze-dry a bag of Skittles and couldn't believe what they looked like — puffed up, pale, completely different from the original. We ordered a second-hand freeze dryer off eBay and three weeks later we were standing in a kitchen in Hackney absolutely losing our minds over a bowl of crunchy Skittles.
           </p>
 
-          {/* Team image placeholder */}
-          <div style={{
-            width: '100%',
-            aspectRatio: '16/7',
-            background: 'var(--charcoal)',
-            borderRadius: 'var(--radius-card)',
-            border: 'var(--border-card)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '2rem',
-            overflow: 'hidden',
-          }}>
-            <img
-              src="https://placehold.co/780x340/1C2433/F4A6C0?text=The+Team"
-              alt="The Fruit Candy UK team in our East London kitchen"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
-
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '1rem', color: 'var(--navy)' }}>How It Started</h2>
           <p style={{ lineHeight: '1.8', color: '#374151', marginBottom: '1.5rem' }}>
             Two of us — siblings, grew up in East London, shared a sweet tooth and an inability to leave a new food trend alone. The first batch was just for us. Then we brought some to a family thing and it was gone in ten minutes. Then a friend asked if they could buy some. Then a TikTok went a bit viral and suddenly we had seventy orders and one freeze dryer.
@@ -47,23 +27,6 @@ export default function About() {
           <p style={{ lineHeight: '1.8', color: '#374151', marginBottom: '2rem' }}>
             We were packing orders on the kitchen table at midnight for about three weeks straight. It was chaotic but honestly brilliant. We bought a second freeze dryer, moved everything to a proper setup, and here we are.
           </p>
-
-          {/* Process image placeholder */}
-          <div style={{
-            width: '100%',
-            aspectRatio: '16/7',
-            background: 'var(--charcoal)',
-            borderRadius: 'var(--radius-card)',
-            border: 'var(--border-card)',
-            marginBottom: '2rem',
-            overflow: 'hidden',
-          }}>
-            <img
-              src="https://placehold.co/780x340/0E1624/F4A6C0?text=The+Process"
-              alt="The freeze-drying process in action"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
 
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', marginBottom: '1rem', color: 'var(--navy)' }}>How Freeze-Drying Works</h2>
           <p style={{ lineHeight: '1.8', color: '#374151', marginBottom: '1.5rem' }}>
@@ -85,23 +48,6 @@ export default function About() {
           <p style={{ lineHeight: '1.8', color: '#374151', marginBottom: '2.5rem' }}>
             We try to reply to every DM and every comment. It's still small enough that we can. If you've got a suggestion for something we should try freeze-drying, send it over — some of our best products came from follower suggestions.
           </p>
-
-          {/* Kitchen image placeholder */}
-          <div style={{
-            width: '100%',
-            aspectRatio: '16/7',
-            background: 'var(--charcoal)',
-            borderRadius: 'var(--radius-card)',
-            border: 'var(--border-card)',
-            marginBottom: '2.5rem',
-            overflow: 'hidden',
-          }}>
-            <img
-              src="https://placehold.co/780x340/E87BA5/0E1624?text=The+Kitchen"
-              alt="Our East London kitchen setup"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
 
           <div style={{ textAlign: 'center' }}>
             <Link to="/shop" className="btn btn-primary" style={{ fontSize: '1.1rem' }}>
