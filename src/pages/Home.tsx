@@ -2,11 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, Truck, Heart, TrendingUp } from 'lucide-react';
 import { products } from '../data/products';
-import { reviews } from '../data/reviews';
 import ProductCard from '../components/ProductCard';
-import ReviewCard from '../components/ReviewCard';
 import CandyIcon from '../components/CandyIcon';
-import StarRating from '../components/StarRating';
 import { InstagramIcon, TikTokIcon } from '../components/SocialIcons';
 
 const trustItems = [
@@ -18,7 +15,6 @@ const trustItems = [
 
 const featuredSlugs = ['freeze-dried-skittles', 'freeze-dried-starburst', 'freeze-dried-jolly-ranchers', 'mix-bag-bundle'];
 const featuredProducts = products.filter(p => featuredSlugs.includes(p.slug));
-const homeReviews = reviews.slice(0, 3);
 
 
 export default function Home() {
@@ -208,29 +204,6 @@ export default function Home() {
             .about-teaser-grid > div:last-child { display: none; }
           }
         `}</style>
-      </section>
-
-      {/* ---- REVIEWS TEASER ---- */}
-      <section className="section bg-cream" aria-labelledby="reviews-heading">
-        <div className="container">
-          <div className="section-header">
-            <h2 id="reviews-heading">What the TikTok Crowd Says</h2>
-            <p>Real people, real crunch.</p>
-          </div>
-          <div className="grid-3">
-            {homeReviews.map(review => (
-              <ReviewCard key={review.id} review={review} />
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-              <StarRating rating={4.9} size={20} />
-              <strong style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem' }}>4.9 out of 5</strong>
-              <span style={{ color: 'var(--muted)', fontSize: '0.875rem' }}>· 247 reviews</span>
-            </div>
-            <Link to="/reviews" className="btn btn-outline-navy">See all reviews →</Link>
-          </div>
-        </div>
       </section>
 
       {/* ---- SOCIAL CTA ---- */}
